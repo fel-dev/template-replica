@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sessão Diagnóstica VPA | Tatiana Pacher - Psicóloga</title>
+  <meta name="description" content="Sessão diagnóstica exclusiva para alcançar uma vida plena e abundante. Transforme sua ansiedade e tristeza em paz e equilíbrio." />
+  <meta name="author" content="Tatiana Pacher" />
+  <meta name="keywords" content="psicóloga, terapia, ansiedade, depressão, saúde mental, vida plena" />
+
+  <meta property="og:title" content="Sessão Diagnóstica VPA | Tatiana Pacher" />
+  <meta property="og:description" content="Sessão diagnóstica exclusiva para alcançar uma vida plena e abundante." />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --background: hsl(345, 30%, 15%);
+      --foreground: hsl(40, 30%, 95%);
+      --card: hsl(345, 25%, 18%);
+      --secondary: hsl(150, 25%, 35%);
+      --secondary-foreground: hsl(40, 30%, 95%);
+      --accent: hsl(42, 70%, 55%);
+      --muted-foreground: hsl(40, 20%, 75%);
+      --border: hsl(345, 20%, 30%);
+      --light-bg: hsl(40, 30%, 96%);
+      --light-foreground: hsl(345, 30%, 15%);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Button */
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: var(--secondary-foreground);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+    }
+
+    .btn-cta:hover {
+      filter: brightness(1.1);
+      transform: scale(1.05);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      padding: 3rem 0;
+    }
+
+    .hero .grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero {
+        padding: 5rem 0;
+      }
+    }
+
+    .hero-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 500;
+      line-height: 1.1;
+      margin-top: 1rem;
+    }
+
+    .hero-title .accent {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-text {
+      color: var(--muted-foreground);
+      font-size: 1.125rem;
+      line-height: 1.8;
+      max-width: 500px;
+      margin-top: 2rem;
+    }
+
+    .hero-cta {
+      margin-top: 2rem;
+    }
+
+    .hero-vagas {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .hero-vagas-dots {
+      display: flex;
+    }
+
+    .hero-vagas-dots span {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      margin-left: -0.5rem;
+      border: 2px solid var(--background);
+    }
+
+    .hero-vagas-dots span:first-child {
+      margin-left: 0;
+      background-color: rgba(200, 160, 80, 0.3);
+    }
+
+    .hero-vagas-dots span:nth-child(2) {
+      background-color: rgba(100, 130, 100, 0.5);
+    }
+
+    .hero-vagas-dots span:nth-child(3) {
+      background-color: hsl(345, 40%, 25%);
+    }
+
+    .hero-vagas strong {
+      color: var(--accent);
+    }
+
+    /* Hero Image */
+    .hero-image-wrapper {
+      position: relative;
+    }
+
+    .hero-image-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      width: 6rem;
+      height: 6rem;
+      border-top: 2px solid var(--accent);
+      border-left: 2px solid var(--accent);
+      opacity: 0.6;
+    }
+
+    .hero-image-wrapper::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      width: 6rem;
+      height: 6rem;
+      border-bottom: 2px solid var(--accent);
+      border-right: 2px solid var(--accent);
+      opacity: 0.6;
+    }
+
+    .hero-image {
+      position: relative;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    }
+
+    .hero-badge-number {
+      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .hero-badge-text {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+    }
+
+    /* Decorative blurs */
+    .hero-blur-1 {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 24rem;
+      height: 24rem;
+      background: rgba(200, 160, 80, 0.05);
+      border-radius: 50%;
+      filter: blur(60px);
+      transform: translateY(-50%);
+    }
+
+    .hero-blur-2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 16rem;
+      height: 16rem;
+      background: rgba(100, 130, 100, 0.1);
+      border-radius: 50%;
+      filter: blur(60px);
+    }
+
+    /* Section Light */
+    .section-light {
+      background-color: var(--light-bg);
+      color: var(--light-foreground);
+      padding: 5rem 0;
+    }
+
+    @media (min-width: 1024px) {
+      .section-light {
+        padding: 8rem 0;
+      }
+    }
+
+    /* Section Dark */
+    .section-dark {
+      background-color: var(--background);
+      color: var(--foreground);
+      padding: 5rem 0;
+    }
+
+    @media (min-width: 1024px) {
+      .section-dark {
+        padding: 8rem 0;
+      }
+    }
+
+    /* Section Title */
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .section-label.gold {
+      color: var(--accent);
+    }
+
+    .section-label.green {
+      color: var(--secondary);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 500;
+    }
+
+    .section-title .accent {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .section-title .secondary {
+      color: var(--secondary);
+      font-style: italic;
+    }
+
+    .section-subtitle {
+      color: var(--muted-foreground);
+      max-width: 600px;
+      margin: 1rem auto 0;
+    }
+
+    /* Audience Grid */
+    .audience-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .audience-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .audience-card {
+      background: var(--background);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2);
+      transition: border-color 0.3s ease;
+    }
+
+    .audience-card:hover {
+      border-color: rgba(200, 160, 80, 0.5);
+    }
+
+    .audience-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: rgba(200, 160, 80, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: background 0.3s ease;
+    }
+
+    .audience-card:hover .audience-icon {
+      background: rgba(200, 160, 80, 0.3);
+    }
+
+    .audience-icon svg {
+      width: 1.75rem;
+      height: 1.75rem;
+      color: var(--accent);
+    }
+
+    .audience-card h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+    }
+
+    .audience-card p {
+      color: var(--muted-foreground);
+      line-height: 1.7;
+    }
+
+    /* Methodology */
+    .methodology-grid {
+      display: grid;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .methodology-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .analysis-points {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .analysis-points {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .analysis-point {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .analysis-point-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: rgba(100, 130, 100, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .analysis-point-icon svg {
+      width: 1rem;
+      height: 1rem;
+      color: var(--secondary);
+    }
+
+    /* Deliverable Card */
+    .deliverable-card {
+      background: var(--card);
+      padding: 2.5rem;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deliverable-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 8rem;
+      height: 8rem;
+      background: rgba(200, 160, 80, 0.1);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+
+    .deliverable-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: rgba(200, 160, 80, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.875rem;
+    }
+
+    .deliverable-card h3 {
+      font-size: 1.875rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .deliverable-card > p {
+      color: var(--muted-foreground);
+      font-size: 1.125rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .deliverable-card strong {
+      color: var(--accent);
+    }
+
+    .deliverable-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .deliverable-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .deliverable-list li svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--secondary);
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: var(--background);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .testimonial-quote {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      color: rgba(200, 160, 80, 0.3);
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-stars svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: var(--accent);
+      color: var(--accent);
+    }
+
+    .testimonial-text {
+      color: var(--muted-foreground);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .testimonial-avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: rgba(200, 160, 80, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .testimonial-name {
+      font-weight: 500;
+      color: var(--foreground);
+    }
+
+    /* Authority */
+    .authority-grid {
+      display: grid;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .authority-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .authority-image-wrapper {
+      position: relative;
+      max-width: 28rem;
+      margin: 0 auto;
+    }
+
+    .authority-image-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba(200, 160, 80, 0.3);
+      border-radius: 0.5rem;
+    }
+
+    .authority-image-wrapper img {
+      position: relative;
+      z-index: 1;
+      border-radius: 0.5rem;
+    }
+
+    .authority-content h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .authority-role {
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .authority-bio p {
+      color: var(--muted-foreground);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .authority-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .authority-stat {
+      text-align: center;
+    }
+
+    .authority-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .authority-stat-label {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-blur-1 {
+      position: absolute;
+      top: 0;
+      left: 25%;
+      width: 16rem;
+      height: 16rem;
+      background: rgba(100, 130, 100, 0.1);
+      border-radius: 50%;
+      filter: blur(60px);
+    }
+
+    .cta-blur-2 {
+      position: absolute;
+      bottom: 0;
+      right: 25%;
+      width: 16rem;
+      height: 16rem;
+      background: rgba(200, 160, 80, 0.1);
+      border-radius: 50%;
+      filter: blur(60px);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 48rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-text {
+      color: var(--muted-foreground);
+      font-size: 1.125rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.125rem;
+      padding: 1.25rem 2.5rem;
+    }
+
+    .cta-button svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .cta-vagas {
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .cta-vagas span {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--background);
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-brand h3 {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .footer-brand p {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a {
+      color: var(--muted-foreground);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+    }
+
+    .footer-bottom .cnpj {
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-blur-1"></div>
+    <div class="hero-blur-2"></div>
+    
+    <div class="container">
+      <div class="grid">
+        <div class="fade-in-left">
+          <p class="hero-label">Sessão Diagnóstica</p>
+          <h1 class="hero-title">
+            Plano para uma <span class="accent">Vida Plena</span> e Abundante
+          </h1>
+          <p class="hero-text">
+            Descubra o caminho para uma transformação profunda. 
+            Uma sessão exclusiva onde vamos analisar sua história 
+            e criar um plano personalizado para você alcançar 
+            a paz e equilíbrio que merece.
+          </p>
+          <div class="hero-cta">
+            <a href="#agendar" class="btn-cta">Quero agendar minha sessão</a>
+          </div>
+          <div class="hero-vagas">
+            <div class="hero-vagas-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span><strong>Apenas 5 vagas</strong> disponíveis por mês</span>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper fade-in-right">
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop&crop=face" alt="Tatiana Pacher - Psicóloga" />
+          </div>
+          <div class="hero-badge">
+            <p class="hero-badge-number">+6 anos</p>
+            <p class="hero-badge-text">de experiência clínica</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audience Section -->
+  <section class="section-light">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">
+          A sessão é <span class="secondary">exclusiva</span> para você que...
+        </h2>
+        <p class="section-subtitle">
+          Se você se identifica com algum desses pontos, essa sessão foi feita especialmente para você.
+        </p>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience-card fade-in">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
+          </div>
+          <h3>Ansiedade constante</h3>
+          <p>Você sente que sua mente não para e vive preocupada com o futuro</p>
+        </div>
+
+        <div class="audience-card fade-in">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </div>
+          <h3>Insônia e cansaço</h3>
+          <p>Dificuldade para dormir ou acordar já cansada, sem energia</p>
+        </div>
+
+        <div class="audience-card fade-in">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+          </div>
+          <h3>Tristeza persistente</h3>
+          <p>Uma sensação de vazio ou melancolia que não passa</p>
+        </div>
+
+        <div class="audience-card fade-in">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
+          <h3>Baixa autoestima</h3>
+          <p>Você se cobra demais e sente que nunca é suficiente</p>
+        </div>
+
+        <div class="audience-card fade-in">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Relacionamentos difíceis</h3>
+          <p>Conflitos frequentes ou dificuldade em se conectar com outros</p>
+        </div>
+
+        <div class="audience-card fade-in">
+          <div class="audience-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          </div>
+          <h3>Falta de propósito</h3>
+          <p>Sensação de estar perdida, sem saber qual caminho seguir</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="methodology-grid">
+        <div class="fade-in-left">
+          <p class="section-label gold">O que vamos analisar</p>
+          <h2 class="section-title">
+            Uma análise <span class="accent">completa</span> da sua jornada
+          </h2>
+          
+          <div class="analysis-points" style="margin-top: 2rem;">
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Saúde Mental</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Histórico Psicológico</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Queixas Atuais</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Impacto Funcional</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Eventos de Vida Significativos</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Desenvolvimento Pessoal</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Dinâmica dos Relacionamentos</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Motivação e Metas</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Expectativas</span>
+            </div>
+            <div class="analysis-point">
+              <div class="analysis-point-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span>Mecanismos de Enfrentamento</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-right">
+          <div class="deliverable-card">
+            <div class="deliverable-icon">📋</div>
+            <h3>Seu Plano Personalizado</h3>
+            <p>
+              Ao final da sessão, você receberá um plano personalizado e completo 
+              para alcançar a <strong>vida plena e abundante</strong> que você merece, 
+              deixando de lado a ansiedade, depressão e tristeza que tiram a sua paz.
+            </p>
+            <ul class="deliverable-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Diagnóstico completo da sua situação atual</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Mapeamento das suas necessidades específicas</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Plano de ação para transformação</span>
+              </li>
+            </ul>
+            <a href="#agendar" class="btn-cta" style="width: 100%; text-align: center;">Quero meu plano personalizado</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section-light">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label green">Depoimentos</p>
+        <h2 class="section-title">
+          O que dizem <span class="secondary">minhas clientes</span>
+        </h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <svg class="testimonial-quote" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "A sessão mudou completamente minha perspectiva. Finalmente entendi padrões que me sabotavam há anos. O plano personalizado me deu clareza e direção."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <span class="testimonial-name">Maria Clara</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <svg class="testimonial-quote" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "Estava perdida e sem esperança. A Dra. Tatiana me acolheu e me ajudou a enxergar um caminho. Hoje me sinto mais leve e confiante."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">F</div>
+            <span class="testimonial-name">Fernanda S.</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <svg class="testimonial-quote" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "Profissional incrível! A análise foi profunda e sensível. Recebi um plano que realmente faz sentido para minha realidade. Super recomendo!"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">C</div>
+            <span class="testimonial-name">Carolina M.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority Section -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="authority-grid">
+        <div class="authority-image-wrapper fade-in-left">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop&crop=face" alt="Tatiana Pacher" />
+        </div>
+
+        <div class="authority-content fade-in-right">
+          <p class="section-label gold">Sobre mim</p>
+          <h2>Tatiana Pacher</h2>
+          <p class="authority-role">Psicóloga Clínica</p>
+          
+          <div class="authority-bio">
+            <p>
+              Há mais de 6 anos dedico minha vida a ajudar pessoas a encontrarem 
+              seu caminho para uma vida mais plena e equilibrada.
+            </p>
+            <p>
+              Com mais de 3.800 horas de atendimento clínico, desenvolvi uma 
+              metodologia única que combina ciência e acolhimento para 
+              proporcionar transformações reais e duradouras.
+            </p>
+            <p>
+              Meu compromisso é criar um espaço seguro onde você possa se 
+              redescobrir e construir a vida abundante que merece.
+            </p>
+          </div>
+
+          <div class="authority-stats">
+            <div class="authority-stat">
+              <p class="authority-stat-number">6+</p>
+              <p class="authority-stat-label">Anos de clínica</p>
+            </div>
+            <div class="authority-stat">
+              <p class="authority-stat-number">3.800+</p>
+              <p class="authority-stat-label">Horas de atendimento</p>
+            </div>
+            <div class="authority-stat">
+              <p class="authority-stat-number">500+</p>
+              <p class="authority-stat-label">Vidas transformadas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-light cta-section" id="agendar">
+    <div class="cta-blur-1"></div>
+    <div class="cta-blur-2"></div>
+    
+    <div class="container">
+      <div class="cta-content fade-in">
+        <h2 class="cta-title">
+          Pronta para transformar sua <span class="secondary">vida?</span>
+        </h2>
+        <p class="cta-text">
+          Não espere mais para dar o primeiro passo. Agende sua sessão 
+          diagnóstica e receba seu plano personalizado para uma vida 
+          plena e abundante.
+        </p>
+        <a href="#" class="btn-cta cta-button">
+          Quero agendar minha sessão
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="cta-vagas">
+          <span>⚡ Apenas 5 vagas</span> disponíveis por mês
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Tatiana Pacher</h3>
+          <p>Psicóloga Clínica • CRP XX/XXXXX</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Termos de Uso</a>
+          <a href="#">Política de Privacidade</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Tatiana Pacher. Todos os direitos reservados.</p>
+        <p class="cnpj">CNPJ: XX.XXX.XXX/0001-XX</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Add staggered delay for cards in grids
+          const delay = entry.target.closest('.audience-grid, .testimonials-grid') 
+            ? Array.from(entry.target.parentElement.children).indexOf(entry.target) * 100 
+            : 0;
+          
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
