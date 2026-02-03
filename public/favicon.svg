@@ -1,0 +1,50 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Trunk/Central stem -->
+  <line x1="150" y1="140" x2="140" y2="240" stroke="#6B5344" stroke-width="4" stroke-linecap="round"/>
+  <line x1="150" y1="140" x2="160" y2="240" stroke="#6B5344" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Roots -->
+  <path d="M 140 240 Q 130 250 125 270" stroke="#6B5344" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 140 240 Q 135 255 130 275" stroke="#6B5344" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 160 240 Q 170 250 175 270" stroke="#6B5344" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 160 240 Q 165 255 170 275" stroke="#6B5344" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- LEFT SIDE - Tree Foliage -->
+  <!-- Main foliage body -->
+  <ellipse cx="80" cy="90" rx="50" ry="65" fill="#8B9D6F" opacity="0.85"/>
+  
+  <!-- Detailed leaves/branches -->
+  <circle cx="50" cy="60" r="15" fill="#8B9D6F"/>
+  <circle cx="55" cy="40" r="12" fill="#8B9D6F"/>
+  <circle cx="70" cy="35" r="14" fill="#8B9D6F"/>
+  <circle cx="85" cy="38" r="13" fill="#8B9D6F"/>
+  <circle cx="95" cy="50" r="12" fill="#8B9D6F"/>
+  
+  <circle cx="45" cy="85" r="13" fill="#8B9D6F"/>
+  <circle cx="50" cy="105" r="14" fill="#8B9D6F"/>
+  <circle cx="70" cy="115" r="12" fill="#8B9D6F"/>
+  <circle cx="90" cy="110" r="15" fill="#8B9D6F"/>
+  <circle cx="100" cy="85" r="13" fill="#8B9D6F"/>
+  
+  <circle cx="75" cy="65" r="11" fill="#9CAF88"/>
+  <circle cx="85" cy="85" r="12" fill="#9CAF88"/>
+  
+  <!-- RIGHT SIDE - Brain -->
+  <!-- Brain outline -->
+  <ellipse cx="220" cy="90" rx="55" ry="70" fill="none" stroke="#5A5A5A" stroke-width="3"/>
+  
+  <!-- Brain convolutions - top -->
+  <path d="M 175 50 Q 180 35 190 40 Q 200 35 210 45 Q 220 38 230 50" stroke="#5A5A5A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 175 60 Q 180 48 190 55 Q 200 48 210 60 Q 220 53 230 65" stroke="#5A5A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Brain convolutions - middle -->
+  <path d="M 170 80 Q 175 70 185 78 Q 195 70 210 85 Q 225 75 240 90" stroke="#5A5A5A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 170 95 Q 175 88 185 95 Q 195 88 210 100 Q 225 92 240 105" stroke="#5A5A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Brain convolutions - bottom -->
+  <path d="M 175 120 Q 180 110 190 120 Q 200 112 215 125 Q 225 118 235 130" stroke="#5A5A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 180 135 Q 185 128 195 135 Q 205 128 220 140 Q 230 135 240 148" stroke="#5A5A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Connection point -->
+  <circle cx="150" cy="140" r="4" fill="#6B5344"/>
+</svg>
