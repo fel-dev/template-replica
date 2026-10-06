@@ -16,15 +16,21 @@ O objetivo é oferecer uma interface simples, acessível e organizada para geren
 
 ## 🚀 Tecnologias Utilizadas
 
-- **HTML5**: Estruturação das páginas.
-- **CSS3**: Estilização e responsividade.
-- **JavaScript**: Interatividade e lógica de navegação.
-- **Hospedagem Local/Servidor Web**: Testes e deploy inicial.
+- **Vite**: servidor de desenvolvimento e build para produção.
+- **React + TypeScript**: componentes e interatividade.
+- **HTML/CSS**: conteúdo e estilos existentes, migrados gradualmente.
 
-*Em desenvolvimento*
-*TypeScript*
-*React*
-*Supabase*
+## Desenvolvimento local
+
+Requer Node.js 20.19+ ou 22.12+ (Node.js 24 é compatível).
+
+```sh
+npm ci
+npm run dev
+```
+
+O comando `npm run build` gera o site em `dist/`. O deploy do GitHub Pages usa
+esse build; imagens, páginas legais e o arquivo `CNAME` são copiados de `public/`.
 
 ---
 
