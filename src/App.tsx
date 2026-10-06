@@ -1,4 +1,5 @@
 import Hero from './components/Hero'
+import AudienceSection from './components/AudienceSection'
 import SiteHeader from './components/SiteHeader'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <SiteHeader />
       <Hero />
+      <AudienceSection />
     </>
   )
 }
