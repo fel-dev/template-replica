@@ -36,19 +36,39 @@ esse build; imagens, páginas legais e o arquivo `CNAME` são copiados de `publi
 
 ## 📂 Estrutura do Projeto
 
-        Cliente    JESSICKA
-          │          │
-          │          ▼
-          │    PAINEL ADMIN
-          │          │
-          │define disponibilidade
-          │          │
-          │          ▼
-          │      SUPABASE
-          │          │
-          ┌─────────┴─────────┐
-          ▼                   ▼
-      SITE CLIENTE       GOOGLE CALENDAR
-          │                   │
-          ▼                   ▼
-     faz reserva          recebe evento
+
+
+
+## Arquiterura
+
+                    INTERNET
+                       │
+                       ▼
+             jessickasoares.com.br
+                       │
+                       ▼
+              React + TypeScript
+                   Vite
+                       │
+             ┌─────────┴─────────┐
+             │                   │
+             ▼                   ▼
+        Área pública         Área admin
+        /agendamento          /admin
+             │                   │
+             └─────────┬─────────┘
+                       ▼
+                    Supabase
+                       │
+            ┌──────────┼──────────┐
+            │          │          │
+            ▼          ▼          ▼
+         Database     Auth      Functions
+            │                     │
+            │                     ▼
+            │              Google Calendar
+            │
+            ▼
+       Agendamentos
+       Disponibilidade
+       Clientes
