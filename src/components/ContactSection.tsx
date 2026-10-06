@@ -85,7 +85,7 @@ function ContactSection() {
         >
           {contactMethods.map(({ icon, title, description, href, linkText }) => (
             <article
-              className={`contact-method rounded-2xl bg-[var(--muted)] p-8 text-center fade-in ${revealFade} ${revealTransition}`}
+              className={`contact-method rounded-2xl bg-muted p-8 text-center fade-in ${revealFade} ${revealTransition}`}
               key={title}
             >
               <div className="mb-4 text-[2.5rem]">{icon}</div>
