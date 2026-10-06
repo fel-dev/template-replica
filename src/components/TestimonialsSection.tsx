@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { revealFade, revealTransition } from './revealClasses'
 
 const testimonials = [
   {
@@ -24,7 +25,7 @@ const testimonials = [
 function QuoteIcon() {
   return (
     <svg
-      className="testimonial-quote"
+      className="absolute right-6 top-6 size-10 text-[rgba(200,160,80,0.3)]"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -41,10 +42,11 @@ function QuoteIcon() {
 
 function TestimonialStars() {
   return (
-    <div className="testimonial-stars" role="img" aria-label="5 estrelas">
+    <div className="mb-4 flex gap-1" role="img" aria-label="5 estrelas">
       {Array.from({ length: 5 }, (_, index) => (
         <svg
           key={index}
+          className="size-5 fill-accent text-accent"
           viewBox="0 0 24 24"
           fill="currentColor"
           stroke="currentColor"
@@ -89,9 +91,7 @@ function TestimonialsSection() {
       { root: null, rootMargin: '0px', threshold: 0.1 },
     )
 
-    section
-      .querySelectorAll('.section-header.fade-in, .testimonial-card.fade-in')
-      .forEach((element) => observer.observe(element))
+    section.querySelectorAll('.fade-in').forEach((element) => observer.observe(element))
 
     return () => {
       observer.disconnect()
@@ -100,26 +100,29 @@ function TestimonialsSection() {
   }, [])
 
   return (
-    <section className="section-light" ref={sectionRef}>
-      <div className="container">
-        <div className="section-header fade-in">
-          <p className="section-label green">Depoimentos</p>
-          <h2 className="section-title">
-            O que dizem <span className="secondary">minhas clientes</span>
+    <section className="bg-light-bg px-0 py-20 text-light-foreground lg:py-32" ref={sectionRef}>
+      <div className="mx-auto max-w-7xl px-4">
+        <div className={`mb-16 text-center fade-in ${revealFade} ${revealTransition}`}>
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-secondary">Depoimentos</p>
+          <h2 className="text-[clamp(2rem,5vw,3rem)] font-medium">
+            O que dizem <span className="font-heading italic text-secondary">minhas clientes</span>
           </h2>
         </div>
 
-        <div className="testimonials-grid">
+        <div className="testimonials-grid grid gap-8 md:grid-cols-3">
           {testimonials.map(({ quote, initial, name }) => (
-            <article className="testimonial-card fade-in" key={name}>
+            <article
+              className={`relative rounded-xl border border-border bg-background p-8 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.2)] fade-in ${revealFade} ${revealTransition}`}
+              key={name}
+            >
               <QuoteIcon />
               <TestimonialStars />
-              <p className="testimonial-text">{quote}</p>
-              <div className="testimonial-author">
-                <div className="testimonial-avatar" aria-hidden="true">
+              <p className="mb-6 leading-[1.7] italic text-muted-foreground">{quote}</p>
+              <div className="flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-full bg-[rgba(200,160,80,0.2)] font-heading font-semibold text-accent" aria-hidden="true">
                   {initial}
                 </div>
-                <span className="testimonial-name">{name}</span>
+                <span className="font-medium text-foreground">{name}</span>
               </div>
             </article>
           ))}

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { revealFade, revealTransition } from './revealClasses'
 
 const audienceCards = [
   {
@@ -6,6 +7,7 @@ const audienceCards = [
     description: 'Sente que precisa dar conta de tudo e se sente exausta',
     icon: (
       <svg
+        className="size-full"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -23,6 +25,7 @@ const audienceCards = [
     description: 'Se cobra mesmo quando já fez o seu melhor',
     icon: (
       <svg
+        className="size-full"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -44,6 +47,7 @@ const audienceCards = [
       'Sente culpa quando coloca suas próprias necessidades em primeiro lugar',
     icon: (
       <svg
+        className="size-full"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -64,6 +68,7 @@ const audienceCards = [
     description: 'Tem dificuldade em dizer não e colocar limites',
     icon: (
       <svg
+        className="size-full"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -84,6 +89,7 @@ const audienceCards = [
       'Percebe que está tão ocupada cumprindo responsabilidades que acabou se afastando de si mesma',
     icon: (
       <svg
+        className="size-full"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -101,6 +107,7 @@ const audienceCards = [
     description: 'Sensação de estar perdida, sem saber qual caminho seguir',
     icon: (
       <svg
+        className="size-full"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -146,9 +153,7 @@ function AudienceSection() {
       { root: null, rootMargin: '0px', threshold: 0.1 },
     )
 
-    section
-      .querySelectorAll('.section-header.fade-in, .audience-card.fade-in')
-      .forEach((element) => observer.observe(element))
+    section.querySelectorAll('.fade-in').forEach((element) => observer.observe(element))
 
     return () => {
       observer.disconnect()
@@ -157,25 +162,36 @@ function AudienceSection() {
   }, [])
 
   return (
-    <section className="section-light" id="services" ref={sectionRef}>
-      <div className="container">
-        <div className="section-header fade-in">
-          <h2 className="section-title">
-            A sessão é <span className="secondary">exclusiva</span> para você
+    <section
+      className="bg-light-bg px-0 py-20 text-light-foreground lg:py-32"
+      id="services"
+      ref={sectionRef}
+    >
+      <div className="mx-auto max-w-7xl px-4">
+        <div
+          className={`mb-16 text-center fade-in ${revealFade} ${revealTransition}`}
+        >
+          <h2 className="text-[clamp(2rem,5vw,3rem)] font-medium">
+            A sessão é <span className="font-heading italic text-secondary">exclusiva</span> para você
             que...
           </h2>
-          <p className="section-subtitle">
+          <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">
             Se você se identifica com algum desses pontos, meu trabalho foi
             feito especialmente para você.
           </p>
         </div>
 
-        <div className="audience-grid">
+        <div className="audience-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {audienceCards.map(({ title, description, icon }) => (
-            <article className="audience-card fade-in" key={title}>
-              <div className="audience-icon">{icon}</div>
-              <h3>{title}</h3>
-              <p>{description}</p>
+            <article
+              className={`group rounded-xl border border-border bg-background p-8 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.2)] [transition:opacity_800ms_ease,transform_800ms_ease,border-color_300ms_ease] hover:border-[rgba(200,160,80,0.5)] fade-in ${revealFade}`}
+              key={title}
+            >
+              <div className="mb-6 flex size-14 items-center justify-center rounded-full bg-[rgba(200,160,80,0.2)] transition-colors duration-300 ease-[ease] group-hover:bg-[rgba(200,160,80,0.3)]">
+                <span className="size-7 text-accent">{icon}</span>
+              </div>
+              <h3 className="mb-3 text-xl font-medium text-foreground">{title}</h3>
+              <p className="leading-[1.7] text-muted-foreground">{description}</p>
             </article>
           ))}
         </div>

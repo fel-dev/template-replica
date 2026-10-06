@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { revealFade, revealTransition } from './revealClasses'
 
 const contactMethods = [
   {
@@ -53,9 +54,7 @@ function ContactSection() {
       { root: null, rootMargin: '0px', threshold: 0.1 },
     )
 
-    section
-      .querySelectorAll('.section-header.fade-in, .contact-method.fade-in')
-      .forEach((element) => observer.observe(element))
+    section.querySelectorAll('.fade-in').forEach((element) => observer.observe(element))
 
     return () => {
       observer.disconnect()
@@ -64,61 +63,39 @@ function ContactSection() {
   }, [])
 
   return (
-    <section className="section-light" id="contact" ref={sectionRef}>
-      <div className="container">
-        <div className="section-header fade-in">
-          <p className="section-label green">Entre em contato</p>
-          <h2 className="section-title">
-            Vamos conversar sobre sua <span className="secondary">jornada</span>
+    <section
+      className="bg-light-bg px-0 py-20 text-light-foreground lg:py-32"
+      id="contact"
+      ref={sectionRef}
+    >
+      <div className="mx-auto max-w-7xl px-4">
+        <div className={`mb-16 text-center fade-in ${revealFade} ${revealTransition}`}>
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-secondary">Entre em contato</p>
+          <h2 className="text-[clamp(2rem,5vw,3rem)] font-medium">
+            Vamos conversar sobre sua <span className="font-heading italic text-secondary">jornada</span>
           </h2>
-          <p className="section-subtitle">
+          <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground">
             Estou aqui para responder suas dúvidas e <strong>ajudá-la</strong> a
             dar o primeiro passo.
           </p>
         </div>
 
         <div
-          className="contact-methods"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem',
-            marginTop: '3rem',
-            maxWidth: '900px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
+          className="contact-methods mx-auto mt-12 grid max-w-[900px] grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8"
         >
           {contactMethods.map(({ icon, title, description, href, linkText }) => (
             <article
-              className="contact-method fade-in"
+              className={`contact-method rounded-2xl bg-[var(--muted)] p-8 text-center fade-in ${revealFade} ${revealTransition}`}
               key={title}
-              style={{
-                background: 'var(--muted)',
-                padding: '2rem',
-                borderRadius: '16px',
-                textAlign: 'center',
-              }}
             >
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-                {icon}
-              </div>
-              <h3 style={{ marginBottom: '0.5rem' }}>{title}</h3>
-              <p
-                style={{
-                  color: 'var(--muted-foreground)',
-                  marginBottom: '1rem',
-                }}
-              >
+              <div className="mb-4 text-[2.5rem]">{icon}</div>
+              <h3 className="mb-2">{title}</h3>
+              <p className="mb-4 text-muted-foreground">
                 {description}
               </p>
               <a
                 href={href}
-                style={{
-                  color: 'var(--accent)',
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                }}
+                className="font-semibold text-accent no-underline"
               >
                 {linkText}
               </a>
